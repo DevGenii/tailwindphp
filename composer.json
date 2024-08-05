@@ -1,8 +1,7 @@
 {
-    "name": "arnolem/tailwindphp",
+    "name": "devgenii/tailwindphp",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://www.wixiweb.fr",
     "keywords": ["tailwindcss", "tailwind", "symfony", "laravel", "php"],
     "description": "TailwindPHP - use Tailwind CSS in your PHP projects (without npm)",
     "minimum-stability": "stable",
@@ -11,16 +10,19 @@
         {
             "name": "Arnaud Lemercier",
             "email": "arnaud@wixiweb.fr"
+        },
+        {
+            "name": "Marko Martinović",
+            "email": "marko@devgenii.com"
         }
     ],
     "require": {
         "php": ">=7.4",
-        "symfony/process": ">=6.3",
-        "scssphp/scssphp": "^1.11"
+        "symfony/process": ">=6.3"
     },
     "autoload": {
         "psr-4": {
-            "Arnolem\\TailwindPhp\\": "src/"
+            "DevGenii\\TailwindPhp\\": "src/"
         }
     }
 }
