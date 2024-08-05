@@ -12,16 +12,16 @@ IMPORTANT : Alpha version required linux x64.
 
 
 ```bash
-composer req arnolem/tailwindphp
+composer req devgenii/tailwindphp
 ```
 Add execution rights
 ```bash
-chmod +x ./vendor/arnolem/tailwindphp/bin/*
+chmod +x ./vendor/devgenii/tailwindphp/bin/*
 ```
 
 ## Configuration
 
-1- create a ``tailwind.config.js`` config file 
+1- create a ``tailwind.config.js`` config file
 
 ```javascript
 /** @type {import('tailwindcss').Config} */
@@ -33,78 +33,11 @@ module.exports = {
   plugins: [],
 }
 ```
-2-Add a link to the css route 
-
-```html
-<!-- base.html.twig -->
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ path('css') }}" >
-<!-- //... -->
-```
-
-3-Create a css route with TailwindPhp
-
-
-```php
-<?php
-// src/Controller/CssController.php
-namespace App\Controller;
-
-use Arnolem\TailwindPhp\TailwindPhp;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-
-class CssController
-{
-    #[Route(path: 'style.css', name: 'css')]
-    public function index(): Response
-    {
-        return new Response(
-            TailwindPhp::build(),
-            Response::HTTP_OK,
-            ['Content-Type' => 'text/css']
-        );
-    }
-}
-```
-
-Optional-Enable SCSS compilation
-
-
-```php
-<?php
-// src/Controller/CssController.php
-namespace App\Controller;
-
-use Arnolem\TailwindPhp\TailwindPhp;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-
-class CssController
-{
-    #[Route(path: 'style.css', name: 'css')]
-    public function index(): Response
-    {
-        TailwindPhp::enableScss(true);
-        
-        $scss = 'YOUR_SCSS_CONTENT with @apply ou theme() function';
-        
-        return new Response(
-            TailwindPhp::build($scss),
-            Response::HTTP_OK,
-            ['Content-Type' => 'text/css']
-        );
-    }
-}
-```
 
 ## Credits
 
 - Arnaud Lemercier is based on [Wixiweb](https://wixiweb.fr).
+- Marko Martinović is based on [DevGenii](https://devgenii.com).
 
 ## License
 
